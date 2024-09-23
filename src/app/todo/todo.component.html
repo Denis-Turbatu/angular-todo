@@ -1,15 +1,21 @@
-<div>
-    <input type="text" id="todoInput">
-    <select name="todoSelect" id="todoSelect">
-        <option value="work">Lavoro</option>
-        <option value="personal">Personale</option>
-        <option value="other">Altro</option>
-    </select>
-    <button (click)="placeTodo()">Invia</button>
+<div class="py-4">
+    <h1>To-do List</h1>
+    <div class="relative">
+        <input type="text" id="todoInput" class="todo-input focus:outline-none">
+        <button (click)="placeTodo()" class="todo-button absolute top-0 right-0">Invia</button>
+    </div>
 </div>
 
 <div>
     <ul>
-        <li *ngFor="let todo of todos">titolo: {{todo.title}} | tag: {{todo.tag}} | fatto?: {{todo.isDone}}</li>
+        <li *ngFor="let todo of todos" class="flex items-center justify-between border border-green-500">
+            <div class="flex items-center">
+                <span class="rounded-full border border-red-500 w-6 h-6 inline-block me-3">
+                
+                </span>
+                {{ todo.title }}
+            </div>
+            <span class="me-2">x</span>
+        </li>
     </ul>
 </div>

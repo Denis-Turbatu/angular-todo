@@ -14,10 +14,9 @@ export class TodoComponent {
 
   placeTodo(): void  {
     const todoInput = document.getElementById('todoInput') as HTMLInputElement;
-    const todoSelect = document.getElementById('todoSelect') as HTMLInputElement;
     if(todoInput){
       console.log(todoInput.value);
-      this.todos.push({title: todoInput.value, tag: todoSelect.value, isDone: false});
+      this.todos.push({title: todoInput.value, isDone: false});
 
     }
   }
@@ -25,6 +24,5 @@ export class TodoComponent {
 
 interface todo {
   title: string;
-  tag: string;
   isDone: boolean;
 }
