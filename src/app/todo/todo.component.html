@@ -1,0 +1,15 @@
+<div>
+    <input type="text" id="todoInput">
+    <select name="todoSelect" id="todoSelect">
+        <option value="work">Lavoro</option>
+        <option value="personal">Personale</option>
+        <option value="other">Altro</option>
+    </select>
+    <button (click)="placeTodo()">Invia</button>
+</div>
+
+<div>
+    <ul>
+        <li *ngFor="let todo of todos">titolo: {{todo.title}} | tag: {{todo.tag}} | fatto?: {{todo.isDone}}</li>
+    </ul>
+</div>
